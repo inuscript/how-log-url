@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js">
+    </script>
+  </head>
+  <body>
+    <div id="url"></div>
+    <div id="count"></div>
+    <div id="links">
+    </div>
+    <script type="text/javascript">
+    var uri = window.location.href
+    $("#url").text(uri)
+    $("#count").text(uri.length)
+    var nextUrl = uri + "x".repeat(1000)
+    var $a = $("<a>").attr("href", nextUrl).text(nextUrl)
+    $("#links").append($a)
+    </script>
+  </body>
+</html>
