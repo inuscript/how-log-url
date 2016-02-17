@@ -15,9 +15,25 @@
     var uri = window.location.href
     $("#url").text(uri)
     $("#count").text(uri.length)
-    var nextUrl = uri + "x".repeat(1000)
-    var $a = $("<a>").attr("href", nextUrl).text(nextUrl)
-    $("#links").append($a)
+    var parse = uri.split("?")
+    var host = parse[0]
+    var q = parse[1] || ""
+    var nextUrl1 = host + "?" + q + "x".repeat(1)
+    var nextUrl10 = host + "?" + q + "x".repeat(10)
+    var nextUrl100 = host + "?" + q + "x".repeat(100)
+    var nextUrl1000 = host + "?" + q + "x".repeat(1000)
+    $("#links").append(
+      $("<a>").attr("href", nextUrl1).text("+1")
+    )
+    $("#links").append(
+      $("<a>").attr("href", nextUrl10).text("+10")
+    )
+    $("#links").append(
+      $("<a>").attr("href", nextUrl100).text("+100")
+    )
+    $("#links").append(
+      $("<a>").attr("href", nextUrl1000).text("+1000")
+    )
     </script>
   </body>
 </html>
